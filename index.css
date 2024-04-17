@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .big-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+.container .big-wrapper .board {
+  padding: 0 30px;
+  border-radius: 7px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .big-wrapper .board p {
+  margin: 7px;
+}
+.container .wrapper {
+  width: 500px;
+  display: grid;
+  grid-template: repeat(3, minmax(150px, 1fr))/repeat(3, minmax(150px, 1fr));
+}
+.container .wrapper .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  font-size: 100px;
+  line-height: 100px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.container .scores {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  width: 250px;
+  margin-top: 40px;
+}
+.container .scores label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 7px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.container .scores label p {
+  margin: 0% 5px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/*# sourceMappingURL=index.css.map */
