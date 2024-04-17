@@ -68,7 +68,7 @@ let Controller = function createGameController(){
                     if(e.symbol == Gameboard.gameboardArr[line[0]-1]){
                         e.score++;
                         e.turn = true;
-                        Gameboard.cellsArr.forEach(c=> c.isFull = false);
+                        Gameboard.cellsArr.forEach(c=> c.isFull = true);
                         Gameboard.cellsArr[line[0]-1].element.style.backgroundColor = "black"
                         Gameboard.cellsArr[line[1]-1].element.style.backgroundColor = "black"
                         Gameboard.cellsArr[line[2]-1].element.style.backgroundColor = "black"
@@ -90,6 +90,7 @@ let Controller = function createGameController(){
                         c.element.style.backgroundColor = "green";
                     })
                     Gameboard.gameboardArr = ['', '', '',   '', '', '',   '', '', ''];
+                    Gameboard.cellsArr.forEach(c=> c.isFull = false);
                     await sleep(1000);
                     Gameboard.cellsArr.forEach(async c=>{
                         c.element.style.backgroundColor = "white";
