@@ -52,10 +52,7 @@ let Controller = function createGameController(){
         })
         Players.playersArr.forEach(e=>{
             e.turn = !e.turn;
-            // console.log(e)
         })
-
-        // console.log(Players.playersArr)
 
         redraw();
     }
@@ -63,7 +60,7 @@ let Controller = function createGameController(){
     let checkForWinners = () => {
         console.log(Gameboard.gameboardArr);
         let lineIndeces = [[1,2,3], [4,5,6], [7,8,9], [1,5,9], [3,5,7], [1,4,7], [2,5,8], [3,6,9]];
-        lineIndeces.forEach(line=>{
+        lineIndeces.forEach(async line=>{
 
             if(Gameboard.gameboardArr[line[0]-1] == Gameboard.gameboardArr[line[1]-1] && Gameboard.gameboardArr[line[1]-1] == Gameboard.gameboardArr[line[2]-1] && Gameboard.gameboardArr[line[2]-1] != ""){
                 
@@ -87,6 +84,18 @@ let Controller = function createGameController(){
                     }
                 })
                 Controller.redraw();
+            } else {
+                if(!Gameboard.gameboardArr.includes("")){
+                    Gameboard.cellsArr.forEach(async c=>{
+                        c.element.style.backgroundColor = "green";
+                    })
+                    Gameboard.gameboardArr = ['', '', '',   '', '', '',   '', '', ''];
+                    await sleep(1000);
+                    Gameboard.cellsArr.forEach(async c=>{
+                        c.element.style.backgroundColor = "white";
+                    })
+                    redraw();
+                }
             }
         })
 
@@ -120,3 +129,5 @@ Gameboard.cellsArr.forEach(e=>{
         Controller.checkForWinners();
     })
 })
+
+Controller.redraw()
