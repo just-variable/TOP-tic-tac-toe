@@ -4,26 +4,10 @@
   align-items: center;
   justify-content: center;
 }
-.container .big-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 200px;
-}
-.container .big-wrapper .board {
-  padding: 0 30px;
-  border-radius: 7px;
-  border: 2px solid black;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.container .big-wrapper .board p {
-  margin: 7px;
-}
 .container .wrapper {
-  width: 500px;
+  width: min(500px, 90%);
   display: grid;
-  grid-template: repeat(3, minmax(150px, 1fr))/repeat(3, minmax(150px, 1fr));
+  grid-template: repeat(3, minmax(150px, 1fr))/repeat(3, minmax(30%, 150px));
 }
 .container .wrapper .cell {
   display: flex;
